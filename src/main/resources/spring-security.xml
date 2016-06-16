@@ -38,7 +38,6 @@
 		-->
 		<!--<anonymous enabled="false"/>-->
 		<custom-filter ref="restAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
-
 		<intercept-url pattern="/*" access="permitAll"/>
 		<intercept-url pattern="/secure/**" access="isFullyAuthenticated()"/>
 	</http>
