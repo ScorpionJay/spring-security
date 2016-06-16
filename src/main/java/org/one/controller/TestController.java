@@ -12,5 +12,9 @@ public class TestController {
         return "test";
     }
 
+	@RequestMapping(value="hello")
+    public String hello() {
+        return "hello";
+    }
 
 }
