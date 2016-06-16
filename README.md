@@ -26,4 +26,10 @@ http://patorjk.com/software/taag/
 # mongodb
 
 
-          
+# redis
+
+https://github.com/ServiceStack/redis-windows    download
+
+https://spring.io/guides/gs/messaging-redis/
+
+redis-server
