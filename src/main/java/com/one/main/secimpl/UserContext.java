@@ -10,9 +10,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.one.main.domain.User;
 
-/** This object wraps {@link User} and makes it {@link UserDetails} so that Spring Security can use it. */
+/**
+ * This object wraps {@link User} and makes it {@link UserDetails} so that
+ * Spring Security can use it.
+ */
 public class UserContext implements UserDetails {
 
+	private static final long serialVersionUID = 1L;
 	private User user;
 
 	public UserContext(User user) {
@@ -60,9 +64,7 @@ public class UserContext implements UserDetails {
 
 	@Override
 	public boolean equals(Object o) {
-		return this == o
-			|| o != null && o instanceof UserContext
-			&& Objects.equals(user, ((UserContext) o).user);
+		return this == o || o != null && o instanceof UserContext && Objects.equals(user, ((UserContext) o).user);
 	}
 
 	@Override
@@ -72,8 +74,6 @@ public class UserContext implements UserDetails {
 
 	@Override
 	public String toString() {
-		return "UserContext{" +
-			"user=" + user +
-			'}';
+		return "UserContext{" + "user=" + user + '}';
 	}
 }

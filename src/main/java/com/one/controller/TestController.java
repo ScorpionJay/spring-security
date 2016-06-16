@@ -1,4 +1,4 @@
-package org.one.controller;
+package com.one.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
 	
-	@RequestMapping(value="test")
+	@RequestMapping(value="test123")
     public String test() {
         return "test";
     }

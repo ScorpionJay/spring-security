@@ -3,6 +3,7 @@ package com.one.main.secimpl;
 import com.one.main.domain.User;
 import com.one.main.domain.UserDao;
 import com.one.main.restsec.AuthenticationService;
+import com.one.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,6 +19,9 @@ public class MyUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	UserService userService;
 
 	/**
 	 * This will be called from
@@ -28,7 +32,8 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		System.out.println(" *** MyUseDetailService.loadUserByUsername");
-		User user = userDao.getByLogin(username);
+		//User user = userDao.getByLogin(username);
+		User user = userService.getByUsername(username);
 		if (user == null) {
 			throw new UsernameNotFoundException("User " + username + " not found");
 		}

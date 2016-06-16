@@ -1,4 +1,4 @@
-package org.one.controller;
+package com.one.controller;
 
 import java.util.Collection;
 import java.util.Map;

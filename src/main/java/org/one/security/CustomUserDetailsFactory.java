@@ -1,7 +1,8 @@
 package org.one.security;
 
-import org.one.entity.User;
 import org.springframework.security.core.authority.AuthorityUtils;
+
+import com.one.mongo.entity.User;
 
 public class CustomUserDetailsFactory {
 

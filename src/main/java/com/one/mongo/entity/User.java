@@ -1,13 +1,20 @@
-package org.one.entity;
+package com.one.mongo.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author jay
  * @since 2016年6月16日
  */
-public class User {
+@Document
+public class User implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	@Id
 	private String id;
 	private String username;
 	private String password;

@@ -34,6 +34,8 @@ dependencies {
 	
 	compile("org.springframework.boot:spring-boot-starter-logging")
 
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '1.3.5.RELEASE'
+    
     testCompile("org.springframework.boot:spring-boot-starter-test")
     
     

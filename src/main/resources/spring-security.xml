@@ -16,7 +16,7 @@
 	need to add proxy-target-class="true" as well. Book "Spring Security 3.1", Chapter 10, Fine-grained
 	Access Control, from header "Method security on Spring MVC controllers" on discusses these topics.
 	-->
-	<!-- <global-method-security secured-annotations="enabled"/> -->
+	<global-method-security secured-annotations="enabled"/>
 
 	<http realm="Protected API"
 		use-expressions="true"

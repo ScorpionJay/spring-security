@@ -10,6 +10,10 @@ public class User {
 	private String password; // should be hashed, but doesn't matter in our example
 	private String[] roles;
 
+	public User() {
+		super();
+	}
+
 	public User(String login, String name, String password, String... roles) {
 		this.login = login;
 		this.name = name;
