@@ -26,6 +26,13 @@ public interface UserService {
 	User getByUsername(String username);
 	
 	/**
+	 * 根据用户名查找用户
+	 * @param userName
+	 * @return
+	 */
+	UserVo getByUsername2(String username);
+	
+	/**
 	 * 查找所有用户
 	 * @return
 	 */

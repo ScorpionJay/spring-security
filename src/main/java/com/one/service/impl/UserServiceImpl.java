@@ -74,4 +74,20 @@ public class UserServiceImpl implements UserService {
 
 	}
 
+	@Override
+	public UserVo getByUsername2(String username) {
+		User user = mongoTemplate.findOne(new Query(where("username").is(username)), User.class);
+		UserVo outUser = null; 
+		if(user != null){
+			outUser = new UserVo();
+			outUser.setImg(user.getImg());
+			outUser.setUsername(user.getUsername());
+			outUser.setName(user.getName());
+			outUser.setSign(user.getSign());
+			outUser.setGender(user.getGender());
+		}
+
+		return outUser;
+	}
+
 }

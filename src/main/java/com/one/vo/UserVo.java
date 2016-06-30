@@ -18,6 +18,26 @@ public class UserVo implements Serializable {
 	private Date lastPasswordReset;
 	private String authorities;
 
+	/**
+	 * 0 男 2 女
+	 */
+	private Integer gender = 0;
+
+	/**
+	 * 真实姓名
+	 */
+	private String name = "";
+
+	/**
+	 * 签名
+	 */
+	private String sign = "";
+
+	/**
+	 * 头像
+	 */
+	private String img = "";
+
 	public String getUsername() {
 		return username;
 	}
@@ -103,7 +123,36 @@ public class UserVo implements Serializable {
 		this.authorities = authorities;
 	}
 
-	
-	
-	
+	public Integer getGender() {
+		return gender;
+	}
+
+	public void setGender(Integer gender) {
+		this.gender = gender;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSign() {
+		return sign;
+	}
+
+	public void setSign(String sign) {
+		this.sign = sign;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
 }
