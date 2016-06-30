@@ -90,4 +90,20 @@ public class UserVo implements Serializable {
 		return "UserVo [id=" + id + ", userName=" + username + ", password=" + password + ", email=" + email + "]";
 	}
 
+	public UserVo(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
+	public UserVo(String username, String password, String authorities) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.authorities = authorities;
+	}
+
+	
+	
+	
 }

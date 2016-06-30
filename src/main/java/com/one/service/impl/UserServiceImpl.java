@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.one.mongo.entity.User;
 import com.one.service.UserService;
 import com.one.vo.UserVo;
+import com.weixin.exception.MyException;
 
 /**
  * @author jay
@@ -58,11 +59,10 @@ public class UserServiceImpl implements UserService {
 	public void addUser(UserVo userVo) {
 
 		// check userName exist
-//		UserVo vo  = findByUserName(userVo.getUserName());
-//		
-//		if( vo != null ){
-//			throw  new MyException(100,"用户名已存在！");
-//		}
+		com.one.main.domain.User vo  = getByUsername(userVo.getUserName());
+		if( vo != null ){
+			throw  new MyException(100,"用户名已存在！");
+		}
 		
 		User user = new User();
 		user.setUsername(userVo.getUserName());
