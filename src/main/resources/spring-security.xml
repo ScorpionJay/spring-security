@@ -40,7 +40,7 @@
 		<custom-filter ref="restAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
 		<intercept-url pattern="/*" access="permitAll"/>
 		<intercept-url pattern="/secure/**" access="isFullyAuthenticated()"/>
-		<intercept-url pattern="/account/**" access="isFullyAuthenticated()"/>
+		<intercept-url pattern="/*/account/**" access="isFullyAuthenticated()"/>
 	</http>
 
 	<bean:bean id="unauthorizedEntryPoint" class="com.one.main.restsec.UnauthorizedEntryPoint"/>

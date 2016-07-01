@@ -3,32 +3,29 @@ package com.one.vo;
 import java.io.Serializable;
 
 /**
+ * Result vo
+ * 
  * @author jay
- * @since 2016年6月30日
+ * @since 2016-6-30
  */
 public class ResultVo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * code 0: ok
+	 * code  0: ok
 	 */
 	private Integer code = 0;
 
 	/**
-	 * return object
+	 * message
 	 */
-	private Object obj;
+	private String msg = "ok";
 
-	public ResultVo(Integer code, Object obj) {
-		super();
-		this.code = code;
-		this.obj = obj;
-	}
-
-	public ResultVo() {
-		super();
-	}
+	/**
+	 * return data
+	 */
+	private Object data;
 
 	public Integer getCode() {
 		return code;
@@ -38,17 +35,36 @@ public class ResultVo implements Serializable {
 		this.code = code;
 	}
 
-	public Object getObj() {
-		return obj;
+	public String getMsg() {
+		return msg;
 	}
 
-	public void setObj(Object obj) {
-		this.obj = obj;
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+	public ResultVo() {
+		super();
+	}
+
+	public ResultVo(Integer code, String msg, Object data) {
+		super();
+		this.code = code;
+		this.msg = msg;
+		this.data = data;
 	}
 
 	@Override
 	public String toString() {
-		return "ResultVo [code=" + code + ", obj=" + obj + "]";
+		return "ResultVo [code=" + code + ", msg=" + msg + ", data=" + data + "]";
 	}
 
 }

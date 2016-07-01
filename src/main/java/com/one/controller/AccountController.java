@@ -18,24 +18,26 @@ import com.one.vo.UserVo;
  * @since 2016年6月30日
  */
 @Controller
-@RequestMapping("account")
+@RequestMapping("v1/account")
 public class AccountController {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
-	
+
 	@Autowired
 	private UserService userService;
 
 	/**
 	 * get user info by username
+	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "{username}")
+	@RequestMapping(value = "{username}", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultVo getByUsername(@PathVariable String username) {
 		ResultVo resultVo = new ResultVo();
 		UserVo userVo = userService.getByUsername2(username);
-		resultVo.setObj(userVo);
+		resultVo.setData(userVo);
+//		Integer.parseInt("aaa");
 		log.info(resultVo.toString());
 		return resultVo;
 	}

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.one.mongo.entity.User;
 import com.one.service.UserService;
+import com.one.util.ExceptionUtil;
 import com.one.vo.UserVo;
 import com.weixin.exception.MyException;
 
@@ -26,6 +27,11 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
+	@Autowired
+	ExceptionUtil exceptionUtil;
+	
+	
+	
 	@Override
 	public com.one.main.domain.User getByUsername(String username) {
 		User user = mongoTemplate.findOne(new Query(where("username").is(username)), User.class);
@@ -61,7 +67,7 @@ public class UserServiceImpl implements UserService {
 		// check userName exist
 		com.one.main.domain.User vo  = getByUsername(userVo.getUserName());
 		if( vo != null ){
-			throw  new MyException(100,"用户名已存在！");
+			exceptionUtil.getException("account.exist");
 		}
 		
 		User user = new User();

@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.preauth.PreAuthenticatedA
 import com.one.main.restsec.AuthenticationService;
 import com.one.main.restsec.TokenInfo;
 import com.one.main.restsec.TokenManager;
+import com.weixin.exception.MyException;
 
 /**
  * Service responsible for all around authentication, token checks, etc.

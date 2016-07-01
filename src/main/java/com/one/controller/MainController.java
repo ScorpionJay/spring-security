@@ -5,10 +5,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.one.service.UserService;
@@ -42,7 +40,7 @@ public class MainController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "register", method = RequestMethod.POST)
+	@RequestMapping(value = "v1/register", method = RequestMethod.POST)
 	@ResponseBody
 	public ResultVo register( String username,  String password) {
 		ResultVo resultVo = new ResultVo();

@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * @author jay
@@ -14,8 +15,13 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource("classpath:spring-security.xml")
 @ComponentScan(basePackages = { "com" })
 @EnableAutoConfiguration
+@PropertySource("classpath:message.properties")
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
+	
+	
+	
+	
 }
