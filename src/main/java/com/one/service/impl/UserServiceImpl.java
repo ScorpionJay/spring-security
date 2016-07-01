@@ -99,12 +99,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void uploadImage(String username, String imgId) {
-		
 		Update update = new Update();
 		update.set("img", imgId);
 		
 		mongoTemplate.findAndModify(new Query(where("username").is(username)), update,  User.class);
 		
+	}
+
+	@Override
+	public void sign(String username, String sign) {
+		Update update = new Update();
+		update.set("sign", sign);
+		mongoTemplate.findAndModify(new Query(where("username").is(username)), update,  User.class);
 	}
 
 }

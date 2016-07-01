@@ -45,4 +45,11 @@ public interface UserService {
 	 */
 	void uploadImage(String username,String imgId);
 	
+	/**
+	 * 个性签名
+	 * @param username
+	 * @param sign
+	 */
+	void sign(String username, String sign);
+	
 }
