@@ -38,4 +38,11 @@ public interface UserService {
 	 */
 	Set<UserVo> findAllUsers();
 	
+	/**
+	 * 上传头像
+	 * @param username
+	 * @param imgId
+	 */
+	void uploadImage(String username,String imgId);
+	
 }

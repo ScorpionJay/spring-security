@@ -41,6 +41,7 @@
 		<intercept-url pattern="/*" access="permitAll"/>
 		<intercept-url pattern="/secure/**" access="isFullyAuthenticated()"/>
 		<intercept-url pattern="/*/account/**" access="isFullyAuthenticated()"/>
+		<intercept-url pattern="/*/file/save" access="isFullyAuthenticated()"/>
 	</http>
 
 	<bean:bean id="unauthorizedEntryPoint" class="com.one.main.restsec.UnauthorizedEntryPoint"/>

@@ -20,8 +20,8 @@ public class User implements Serializable {
 	private String password;
 	private String email;
 	private Date lastPasswordReset;
+	
 	private String authorities;
-
 	/**
 	 * 0 男
 	 * 2 女

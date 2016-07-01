@@ -9,6 +9,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.one.mongo.entity.User;
@@ -94,6 +95,16 @@ public class UserServiceImpl implements UserService {
 		}
 
 		return outUser;
+	}
+
+	@Override
+	public void uploadImage(String username, String imgId) {
+		
+		Update update = new Update();
+		update.set("img", imgId);
+		
+		mongoTemplate.findAndModify(new Query(where("username").is(username)), update,  User.class);
+		
 	}
 
 }
